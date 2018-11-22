@@ -1,7 +1,10 @@
+package com.sawdevelopment.interview.questions;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
+import static org.testng.AssertJUnit.assertNull;
 
 /**
  * @author Scott Weber
@@ -18,9 +21,9 @@ public class ShortestPalindromeTest {
 
   @Test
   public void testShortestPalindrome_NullString() {
-    assertEquals(sut.shortestPalindromeRecursive(null), null);
-    assertEquals(sut.shortestPalindromeIterative(null), null);
-    assertEquals(sut.shortestPalindromeBrie(null), null);
+    assertNull(sut.shortestPalindromeRecursive(null));
+    assertNull(sut.shortestPalindromeIterative(null));
+    assertNull(sut.shortestPalindromeBrie(null));
   }
 
   @Test

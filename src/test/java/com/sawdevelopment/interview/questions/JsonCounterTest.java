@@ -1,3 +1,5 @@
+package com.sawdevelopment.interview.questions;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -17,6 +19,6 @@ public class JsonCounterTest {
 
   @Test
   public void testCountJsonObjects() {
-    assertEquals(sut.countJsonObjects(), 0);
+    assertEquals(sut.countJsonObjects(), 9961);
   }
 }

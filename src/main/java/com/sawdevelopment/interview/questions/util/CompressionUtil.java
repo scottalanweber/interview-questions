@@ -1,4 +1,4 @@
-package util;
+package com.sawdevelopment.interview.questions.util;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -35,7 +35,6 @@ public final class CompressionUtil {
     return compressed;
   }
 
-  @SuppressWarnings("WeakerAccess")
   static public byte[] decompress(byte[] compressed, String errorMsgPrefix) {
     ByteArrayInputStream inputStream = new ByteArrayInputStream(compressed);
     try {

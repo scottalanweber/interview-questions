@@ -1,4 +1,6 @@
-import util.CompressionUtil;
+package com.sawdevelopment.interview.questions;
+
+import com.sawdevelopment.interview.questions.util.CompressionUtil;
 
 /**
  * @author scottalanweber

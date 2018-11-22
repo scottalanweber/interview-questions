@@ -1,3 +1,5 @@
+package com.sawdevelopment.interview.questions;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,8 +14,8 @@ class Shuffler
 
   private boolean alreadyShuffled = false;
 
-  public List<Object> shuffle(List<Object> items) {
-    List shuffledDeck = new ArrayList();
+  List<Object> shuffle(List<Object> items) {
+    List<Object> shuffledDeck = new ArrayList<>();
 
     if(items != null) {
       int sizeOfSplitDeck = items.size() / HALF;

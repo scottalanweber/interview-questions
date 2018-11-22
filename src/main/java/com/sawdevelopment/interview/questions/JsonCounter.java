@@ -1,16 +1,18 @@
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ArrayNode;
+package com.sawdevelopment.interview.questions;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+
 /**
  * @author scottalanweber
  */
-public class JsonCounter {
-  public int countJsonObjects() {
+class JsonCounter {
+  int countJsonObjects() {
     try {
       byte[] personListFile = Files.readAllBytes(Paths.get(new File("test_resources/person_list.json").toURI()));
       ObjectMapper objectMapper = new ObjectMapper();

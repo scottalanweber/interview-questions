@@ -1,13 +1,20 @@
+package com.sawdevelopment.interview.questions;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import util.Person;
-import util.Record;
-import util.RecordSimple;
-import util.Relationship;
 
-import java.util.*;
-
-import static org.testng.Assert.*;
+import com.sawdevelopment.interview.questions.util.Person;
+import com.sawdevelopment.interview.questions.util.Record;
+import com.sawdevelopment.interview.questions.util.RecordSimple;
+import com.sawdevelopment.interview.questions.util.Relationship;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertTrue;
 
 /**
  * @author scottalanweber
@@ -132,7 +139,7 @@ public class StringMappingTest {
     assertEquals(res.size(), 0);
   }
 
-  /** ---------------------- INTERVIEWER ---------------------- **/
+  /* ---------------------- INTERVIEWER ---------------------- */
 //  @Test
 //  public void testGetInterestingPersons_Interviewer() {
 //    List<Person> personList = buildPersonList(5);
@@ -152,7 +159,7 @@ public class StringMappingTest {
 //    assertEquals(res.size(), 0);
 //  }
 
-  /** ---------------------- END OF INTERVIEWER ---------------------- **/
+  /* ---------------------- END OF INTERVIEWER ---------------------- */
 
   private List<Person> buildPersonList(int quantity) {
     List<Person> personList = new ArrayList<>();

@@ -1,8 +1,10 @@
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+package com.sawdevelopment.interview.questions;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotEquals;
@@ -25,7 +27,7 @@ public class ShufflerTest
   }
 
   private List<Object> generateTestList() {
-    List<Object> list = new ArrayList();
+    List<Object> list = new ArrayList<>();
     for (int i = 0; i < SIZE; i++) {
       list.add(i);
     }
@@ -41,7 +43,7 @@ public class ShufflerTest
 
   @Test
   public void EmptyListParameter() {
-    List<Object> actual = sut.shuffle(new ArrayList());
+    List<Object> actual = sut.shuffle(new ArrayList<>());
 
     assertEquals(actual.size(), 0);
   }

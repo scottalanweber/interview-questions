@@ -1,4 +1,4 @@
-package util;
+package com.sawdevelopment.interview.questions.util;
 
 /**
  * @author scottalanweber

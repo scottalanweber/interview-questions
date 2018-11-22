@@ -1,5 +1,10 @@
-import java.util.*;
-import java.util.stream.Collectors;
+package com.sawdevelopment.interview.questions;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static java.util.Collections.emptyList;
 
@@ -8,7 +13,7 @@ import static java.util.Collections.emptyList;
  */
 public class T9Mapper {
 
-  public List<String> mapToWords(List<Integer> inputList) {
+  List<String> mapToWords(List<Integer> inputList) {
     Map<Integer, List<String>> t9Map = new HashMap<>();
     t9Map.put(1, emptyList());
     t9Map.put(2, Arrays.asList("A", "B", "C"));
@@ -21,9 +26,7 @@ public class T9Mapper {
     t9Map.put(9, Arrays.asList("W", "X", "Y", "Z"));
     t9Map.put(0, emptyList());
 
-    List<String> resultList = new ArrayList<>();
-
-    resultList.addAll(t9Map.get(inputList.get(0)));
+    List<String> resultList = new ArrayList<>(t9Map.get(inputList.get(0)));
 
     List<String> tempList = new ArrayList<>();
     for (int i = 1; i < inputList.size(); i++) {
@@ -53,9 +56,7 @@ public class T9Mapper {
     t9Map.put(9, Arrays.asList("W", "X", "Y", "Z"));
     t9Map.put(0, emptyList());
 
-    List<String> resultList = new ArrayList<>();
-
-    resultList.addAll(t9Map.get(inputList.get(0)));
+    List<String> resultList = new ArrayList<>(t9Map.get(inputList.get(0)));
 
     List<String> tempList = new ArrayList<>();
     for (int i = 1; i < inputList.size(); i++) {

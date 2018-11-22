@@ -1,11 +1,14 @@
-import util.Person;
-import util.Record;
-import util.RecordSimple;
+package com.sawdevelopment.interview.questions;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-/**
+import com.sawdevelopment.interview.questions.util.Person;
+import com.sawdevelopment.interview.questions.util.Record;
+
+/*
  * Questions to Ask
  *
  * 1. Given a list of persons (Person Objects) and a list of records (Record Objects) return a list of PersonIds that are found in the Records
@@ -21,7 +24,7 @@ import java.util.stream.Collectors;
  * Find all persons that exist as the principal person on the record
  * @author scottalanweber
  */
-public class StringMapping {
+class StringMapping {
   List<String> getInterestingPersons(List<Person> personList, List<Record> recordList) {
     List<String> personIds = new ArrayList<>();
 
@@ -123,22 +126,5 @@ public class StringMapping {
     }
 
     return personsRecordMap;
-  }
-
-  // ------------ Ryan Sheffer (original code was in Javascript ------------
-  public Map<Person, List<String>> findPersonIds(List<Person> people, List<RecordSimple> records) {
-    Map<Person, List<String>> personRecordNamesMap = new HashMap<>();
-    people.stream()
-        .filter(p -> records.stream().flatMap(r -> r.getPersonIds().stream()).anyMatch(pId -> pId.equals(p.getId())))
-        .collect(Collectors.toMap(p -> p, p -> {
-          List<String> recordNames = new ArrayList<>();
-          records.forEach(r -> {
-            if (r.getPersonIds().contains(p.getId())) {
-              recordNames.add(r.getName());
-            }
-          });
-          return recordNames;
-        }));
-    return personRecordNamesMap;
   }
 }

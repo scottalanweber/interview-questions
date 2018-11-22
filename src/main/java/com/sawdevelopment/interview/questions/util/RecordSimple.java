@@ -1,6 +1,5 @@
-package util;
+package com.sawdevelopment.interview.questions.util;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
