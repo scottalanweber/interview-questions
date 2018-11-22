@@ -8,29 +8,57 @@ import java.util.List;
  *
  * @author boydmr
  */
-public class Stairs123 {
+class Stairs123 {
 
-  public final class StepsTaken {
+  final class StepsTaken {
     List<Integer> sizeOfEachStep = new ArrayList<>();
 
-    public void addPrecedingSteps(StepsTaken previousPattern) {
+    void addPrecedingSteps(StepsTaken previousPattern) {
       sizeOfEachStep.addAll(previousPattern.sizeOfEachStep);
     }
-    public void addStep(int stepSize) {
+    void addStep(int stepSize) {
       sizeOfEachStep.add(stepSize);
     }
 
-    public void removeLastStep() {
+    void removeLastStep() {
       sizeOfEachStep.remove(sizeOfEachStep.size()-1);
     }
   }
 
   /**
+   * ~~~~~ Scott's Solution ~~~~~
+   * Recursively calculate the number of possible steps that can be taken to reach the top of the stairs.
+   * @param numberOfStairs Number of stairs that will be in the staircase
+   * @return number of possible combinations
+   */
+  int calculateCombinationsRecursive(int numberOfStairs) {
+    if(numberOfStairs <= 0) {
+      return 0;
+    }
+
+    return getValidPatternsRecursive(numberOfStairs);
+  }
+
+  private int getValidPatternsRecursive(int numberOfStairs) {
+    if (numberOfStairs < 0) {
+      return 0;
+    }
+
+    if (numberOfStairs <= 1) {
+      return 1;
+    }
+
+    return getValidPatternsRecursive(numberOfStairs - 1) +
+        getValidPatternsRecursive(numberOfStairs - 2) +
+        getValidPatternsRecursive(numberOfStairs - 3);
+  }
+
+  /**
    * Calculate the total number of ways I can take 1, 2, or 3 stairs each step until I reach the top.
-   * @param numberOfStairs
+   * @param numberOfStairs Number of stairs that will be in the staircase
    * @return the number of valid combinations or 0 if no combination works.
    */
-  public List<StepsTaken> calculateCombinations(int numberOfStairs, List<Integer> sizes) {
+  List<StepsTaken> calculateCombinations(int numberOfStairs, List<Integer> sizes) {
     List<StepsTaken> validPatternsAccumulator = new ArrayList<>();
     StepsTaken stepsTakenSoFar = new StepsTaken();
     getValidPatterns(numberOfStairs, sizes, stepsTakenSoFar, validPatternsAccumulator);
